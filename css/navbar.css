@@ -1,0 +1,53 @@
+@import url("'https://fonts.googleapis.com/css2?family=EB+Garamond&family=Lateef&family=Outfit:wght@300&display=swap'");
+
+.navbar {
+  position: fixed; /* Establecemos que la posición del navbar al navegar por la página sea fijo */
+  top: 0%; /* Delimitamos que la posición fija del navbar sea desde el inicio del margen de hasta arriba*/
+  left: 0%; /* Delimitamos que la posición fija del navbar sea desde el inicio del margen de la izquierda */
+  right: 0%; /* Delimitamos que la posición fija del navbar sea desde el inicio del margen de la derecha */
+  z-index: 1; /* Establecemos que el navbar se posicione sobre todo contenido de la página */
+  width: 100%; /* Establecemos que el navbar abarque el 100% de la página */
+  height: auto; /* Establecemos que el navbar abarque en vertical el 100% de la página */
+  background-color: #F5F3EF; /* Establecemos que el color de fondo del navbar sea crema */
+}
+
+.logo {
+  float: left; /* Establecemos que la posición del logo siempre sea a la izquierda (permite compartir espacio con la reservación) */
+  width: 10%; /* Establecemos que el logo abarque el 10% del navbar */
+  height: auto;
+  text-align: center; /* Alineamos el logo al centro del 10% de lo que abarca */
+}
+
+.logo img {
+  width: auto; /* Establecemos que la imagen del logo mantenga su anchura de 70 pixeles */
+  height: 70px; /* Establecemos que la imagen del logo mantenga su altura de 70 pixeles */
+}
+
+.reservacion{
+  float: right; /* Establecemos que la posición de la reservación siempre sea a la derecha (permite compartir espacio con la reservación) */
+  width: 90%; /* Establecemos que la reservación abarque el 90% del navbar */
+  /* Alineamos los elementos de la reservación a la derecha del 90% de lo que abarca */
+  font-family: 'EB Garamond', serif; /* Asignamos la familia EB Garamond a los elementos de la reservación */
+}
+
+.navbar .fila {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: inherit;
+  padding: 1em;
+  margin: 0;
+  justify-content: flex-end;
+}
+
+.navbar .column {
+  display: block;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.navbar .inputFlotante {
+  display: block;
+  margin: 0.2em 0 0.2em 30px;
+  box-sizing: inherit;
+  font-family: 'EB Garamond', serif; /* Asignamos la familia EB Garamond al texto de la entrada de texto */
+}

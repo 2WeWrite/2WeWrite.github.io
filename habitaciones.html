@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <!-- Adaptación de pantalla a distintos dispositivos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Título en pestaña de navegación -->
+    <title>Habitaciones</title>
+    <!-- Hojas de estilos -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/habitaciones.css">
+    <!-- Carga el núcleo de Firebase JS SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- Agrega el manejo de autenticación. -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <!-- Agrega el manejo a Cloud Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <!-- Inicialización con firebase -->
+    <script src="js/inicializacion.js"></script>
+    <!-- Navegación interna de la página -->
+    <script src="js/nav.js"></script>
+    <!-- Funciones de íconos de contacto -->
+    <script src="js/contacto.js"></script>
+    <!-- Controla el botón de reservar según el tipo de usuario -->
+    <script src="js/ctrlSesion.js"></script>
+</head>
+<body>
+    <!-- Página -->
+    <div class="pagina">
+        <!-- Barra de navegación -->
+        <nav class="navbar">
+        <!-- Reservación inmediata a la derecha -->
+        <div class="reservacion">
+            <!-- Logo a la izquierda-->
+            <div class="logo"><img class="imagen_logo" src="img/Logo.png" loading="lazy"/></div>
+            <!-- Logo a la izquierda-->
+
+            <form name="reserva">
+            <!-- Fila responsiva -->
+            <div class="fila">
+                <!-- Fecha de entrada -->
+                <div class="colum">
+                <div class="inputFlotante">
+                    <label for="Fecha">Fecha de entrada:</label>
+                    <input type="date" id="fecha_lleg" name="fecha_lleg" maxlength="10" required pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" required>
+                </div>
+                </div>
+                <!-- Fecha de entrada -->
+
+                <!-- Fecha de salida -->
+                <div class="colum">
+                <div class="inputFlotante">
+                    <label for="Fecha">Fecha de salida:</label>
+                    <input type="date" id="fecha_sal" name="fecha_sal" maxlength="10" required pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" required>
+                </div>
+                </div>
+                <!-- Fecha de salida -->
+
+                <!-- Número de huéspedes -->
+                <div class="colum">
+                <div class="inputFlotante">
+                    <label for="Fecha"># huéspedes:</label>
+                    <input type="number" id="num_hues" name="num_hues" maxlength="3" min="1" max="100" required>
+                </div>
+                </div>
+                <!-- Número de huéspedes -->
+
+                <!-- Botón de reservar -->
+                <div class="colum">
+                <div class="inputFlotante">
+                    <button type="submit" name="btnReservar" class="btn" onclick="logIn();">Reservar</button>
+                </div>
+                </div>
+                <!-- Botón de la reservar -->
+            </div>
+            <!-- Fila responsiva -->
+            </form>
+        </div>
+        <!-- Reservación inmediata a la derecha -->
+        </nav>
+        <!-- Barra de navegación -->
+
+      <!-- Menú -->
+      <div class="menu" role="group">
+        <!-- Botón de Inicio -->
+        <button type="button" onClick="formInicio();" class="menuBtn" title="Inicio" style="font-size:30px; font-weight: lighter;">🏠</button>
+        <!-- Botón de Habitaciones -->
+        <button type="button" class="menuNBtn" title="Habitaciones" style="font-size:30px; font-weight: lighter;">🚪</button>
+        <!-- Botón de Intalaciones -->
+        <button type="button" onClick="formInstalaciones();" class="menuBtn" title="Instalaciones" style="font-size:30px; font-weight: lighter;">🏢</button>
+        <!-- Botón de Turismo -->
+        <button type="button" onClick="formTurismo();" class="menuBtn" title="Turismo" style="font-size:30px; font-weight: lighter;">🚍</button>
+        <!-- Botón de Restaurantes -->
+        <button type="button" onClick="formRestaurantes();" class="menuBtn" title="Restaurantes" style="font-size:30px; font-weight: lighter;">🍴</button>
+        <!-- Botón de FAQ -->
+        <button type="button" onClick="formFAQ();" class="menuBtn" title="FAQ" style="font-size:30px; font-weight: lighter;">❔</button>
+      </div>
+      <!-- Menú -->
+      
+      <!-- Contenido -->
+      <section class="contenido">
+        <!-- Título -->
+        <h1>HABITACIONES</h1>
+        <!-- Título -->
+
+        <!-- División -->
+        <div class="division"></div>
+        <!-- División -->
+
+        <!-- Habitación Estándar Sencilla-->
+        <div class="card_compartida">
+          <!-- Carrusel -->
+          <section class="carrusel">
+            <!-- Envoltura de las imágenes del carrusel -->
+            <div  class="envoltura">
+              <img class="img" src="https://d1el5jddkxvjyd.cloudfront.net/viceroyhotelsandresorts.com-2109743334/cms/cache/v2/60b139e5d765b.jpg/1920x1080/fit/80/d574d35beb17d7a75a0a643d2944c3db.jpg">
+              <img class="img" src="https://d1el5jddkxvjyd.cloudfront.net/viceroyhotelsandresorts.com-2109743334/cms/cache/v2/5c538de1e88ae.jpg/1920x1080/fit/80/cdf17bd47317c492add7b4f1d2870ee1.jpg">
+              <img class="img" src="https://d1el5jddkxvjyd.cloudfront.net/viceroyhotelsandresorts.com-2109743334/cms/cache/v2/5c538de118f42.jpg/1920x1080/fit/80/f50fe1704571499b74925f7ee55dd0e1.jpg">
+              <img class="img" src="https://d1el5jddkxvjyd.cloudfront.net/viceroyhotelsandresorts.com-2109743334/cms/cache/v2/5c538de16b696.jpg/1920x1080/fit/80/16599cca595c452736e4acc453c3310d.jpg">
+            </div>
+            <!-- Envoltura de las imágenes del carrusel -->
+          </section>
+          <!-- Carrusel -->
+
+          <!-- Información -->
+          <div class="description">
+            <h2>Estándar Sencilla</h2>
+            <p> Habitación con 1 cama King Size. Escritorio de trabajo. Superficie aproximada de 37mts². Con una ocupación Máxima de  2 Personas. Ubicada en los pisos 3, 4 y 5. </p>
+            <p class="iconos">
+              <img src="https://image.flaticon.com/icons/png/512/95/95922.png" height="30" width="30" style="background-color: rgba(251, 251, 251, 0.6)"/>
+              <img src="https://cdn-icons-png.flaticon.com/512/435/435527.png" height="30" width="30" style="background-color: rgba(251, 251, 251, 0.6)"/>
+              <img src="https://cdn-icons-png.flaticon.com/512/52/52075.png" height="30" width="30" style="background-color: rgba(251, 251, 251, 0.6)"/>
+              <img src="https://image.flaticon.com/icons/png/512/130/130271.png" height="30" width="30" style="background-color: rgba(251, 251, 251, 0.6)"/>
+            </p>
+          </div>
+          <!-- Información -->
+        </div>
+        <!-- Habitación Estándar Sencilla-->
+
+        <!-- División -->
+        <div class="division"></div>
+        <!-- División -->
+
+        <!-- Habitación Estándar Plus-->
+        <div class="card_compartida">
+          <!-- Carrusel -->
+          <section class="carrusel">
+            <!-- Envoltura de las imágenes del carrusel -->
+            <div  class="envoltura">
+              <img class="img" src="https://d1el5jddkxvjyd.cloudfront.net/viceroyhotelsandresorts.com-2109743334/cms/cache/v2/5c538ddbee0a9.jpg/1920x1080/fit/80/5c27abdcd658b1179010a99d319d5b8f.jpg">
+              <img class="img" src="https://d1el5jddkxvjyd.cloudfront.net/viceroyhotelsandresorts.com-2109743334/cms/cache/v2/5c538dda4b8e6.jpg/1920x1080/fit/80/0eeb6f46061cc735a0bb96511d3f330d.jpg">
+              <img class="img" src="https://d1el5jddkxvjyd.cloudfront.net/viceroyhotelsandresorts.com-2109743334/cms/cache/v2/5c538dd99d771.jpg/1920x1080/fit/80/330ebf6484384a4f38653011ab11fa28.jpg">
+              <img class="img" src="https://d1el5jddkxvjyd.cloudfront.net/viceroyhotelsandresorts.com-2109743334/cms/cache/v2/5c538dd9e01f5.jpg/1920x1080/fit/80/16764decaa46005f5f0cbe6f58026f9c.jpg">
+            </div>
+            <!-- Envoltura de las imágenes del carrusel -->
+          </section>
+          <!-- Carrusel -->
+
+          <!-- Información -->
+          <div class="description">
+            <h2>Estándar Plus</h2>
+            <p> Habitación con 1 cama queen size y sofa cama matrimonial. Escritorio de trabajo. División tipo sala.  Cuenta con una superficie aproximada de 35mts²  y una ocupación Máxima para 4 Personas. Ubicada en planta baja y segundo piso.</p>
+            <p class="iconos">
+              <img src="https://image.flaticon.com/icons/png/512/95/95922.png" height="30" width="30" style="background-color: rgba(251, 251, 251, 0.6)"/>
+              <img src="https://cdn-icons-png.flaticon.com/512/435/435527.png" height="30" width="30" style="background-color: rgba(251, 251, 251, 0.6)"/>
+              <img src="https://cdn-icons-png.flaticon.com/512/52/52075.png" height="30" width="30" style="background-color: rgba(251, 251, 251, 0.6)"/>
+              <img src="https://image.flaticon.com/icons/png/512/130/130271.png" height="30" width="30" style="background-color: rgba(251, 251, 251, 0.6)"/>
+            </p>
+          </div>
+          <!-- Información -->
+        </div>
+        <!-- Habitación Estándar Plus-->
+
+        <!-- Pie de página -->
+        <footer>
+          <!-- Contenedor de la retícula -->
+          <div class="retícula">
+            <!-- Sección: Contacto -->
+            <section class="contacto">
+              <h3>CONTACTO</h3>
+              <!-- Número -->
+              <a class="icon" title="Llámanos" onclick="copyNum()">📞</a>  
+              <!-- Email -->
+              <a class="icon" title="Mándanos un correo" onclick="copyMail()">✉</a>
+              <!-- Ubicación -->
+              <a class="icon" title="Búscanos en Google Maps" href="https://goo.gl/maps/DMi8wx4pS4wtUn2z5">🌎</a>
+            </section>
+            <!-- Sección: Contacto -->
+          </div>
+          <!-- Contenedor de la retícula -->
+      
+          <!-- Copyright -->
+          <div class="copyright" style="background-color: rgba(0, 0, 0, 0.2);">Copyright &copy; 2021</div>
+          <!-- Copyright -->
+        </footer>
+        <!-- Pie de página -->
+      </section>
+      <!-- Contenido -->
+    </div>
+    <!-- Página -->
+  </body>
+</html>

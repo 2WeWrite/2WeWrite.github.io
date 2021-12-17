@@ -1,0 +1,35 @@
+@import url("'https://fonts.googleapis.com/css2?family=EB+Garamond&family=Lateef&family=Outfit:wght@300&display=swap'");
+
+footer {
+    clear: both;
+    width: 100%;
+    background-color: #029876;
+    font-size: 12px;
+    margin: auto;
+}
+  
+.retícula {
+    color: white;
+    font-weight: bold;
+    padding: 1vw 0vw 1vw 0vw;
+    text-align: center;
+}
+
+.icon {
+    margin: 0% 1% 0% 1%;
+    color: #7ed957;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+  
+.icon:hover {
+    margin: 0% 1% 0% 1%;
+    color: blue;
+}
+
+.copyright {
+    color: white;
+    text-align: center;
+    padding: 1vw;
+}

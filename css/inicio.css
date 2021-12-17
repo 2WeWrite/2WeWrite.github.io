@@ -1,0 +1,21 @@
+@import url("'https://fonts.googleapis.com/css2?family=EB+Garamond&family=Lateef&family=Outfit:wght@300&display=swap'");
+
+header {
+  background-image: URL('https://images.squarespace-cdn.com/content/v1/55aa6760e4b0abba4f26f146/1602663897994-71H79LWAWQ7C83TIRRB4/Corinthia_Malta_Vitality_Suite_Cinemagraph_HD_Jack_Hardy_2020.gif');
+  background-size: 100% 100%, cover;
+  padding-top: 16%;
+  padding-bottom: 16%;
+}
+
+header h1 {
+  background: none;
+  padding: 0%;
+}
+
+.descripcion {
+  padding-bottom: 2vw;
+}
+
+.nosotros {
+  padding-bottom: 2vw;
+}

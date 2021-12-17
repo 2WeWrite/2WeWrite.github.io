@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <!-- Adaptación de pantalla a distintos dispositivos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Título en pestaña de navegación -->
+    <title>Instalaciones</title>
+    <!-- Hojas de estilos -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/instalaciones.css">
+    <!-- Carga el núcleo de Firebase JS SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- Agrega el manejo de autenticación. -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <!-- Agrega el manejo a Cloud Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <!-- Inicialización con firebase -->
+    <script src="js/inicializacion.js"></script>
+    <!-- Navegación interna de la página -->
+    <script src="js/nav.js"></script>
+    <!-- Funciones de íconos de contacto -->
+    <script src="js/contacto.js"></script>
+    <!-- Controla el botón de reservar según el tipo de usuario -->
+    <script src="js/ctrlSesion.js"></script>
+</head>
+<body>
+    <!-- Página -->
+    <div class="pagina">
+        <!-- Barra de navegación -->
+        <nav class="navbar">
+        <!-- Reservación inmediata a la derecha -->
+        <div class="reservacion">
+            <!-- Logo a la izquierda-->
+            <div class="logo"><img class="imagen_logo" src="img/Logo.png" loading="lazy"/></div>
+            <!-- Logo a la izquierda-->
+
+            <form name="reserva">
+            <!-- Fila responsiva -->
+            <div class="fila">
+                <!-- Fecha de entrada -->
+                <div class="colum">
+                <div class="inputFlotante">
+                    <label for="Fecha">Fecha de entrada:</label>
+                    <input type="date" id="fecha_lleg" name="fecha_lleg" maxlength="10" required pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" required>
+                </div>
+                </div>
+                <!-- Fecha de entrada -->
+
+                <!-- Fecha de salida -->
+                <div class="colum">
+                <div class="inputFlotante">
+                    <label for="Fecha">Fecha de salida:</label>
+                    <input type="date" id="fecha_sal" name="fecha_sal" maxlength="10" required pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" required>
+                </div>
+                </div>
+                <!-- Fecha de salida -->
+
+                <!-- Número de huéspedes -->
+                <div class="colum">
+                <div class="inputFlotante">
+                    <label for="Fecha"># huéspedes:</label>
+                    <input type="number" id="num_hues" name="num_hues" maxlength="3" min="1" max="100" required>
+                </div>
+                </div>
+                <!-- Número de huéspedes -->
+
+                <!-- Botón de reservar -->
+                <div class="colum">
+                <div class="inputFlotante">
+                    <button type="submit" name="btnReservar" class="btn" onclick="logIn();">Reservar</button>
+                </div>
+                </div>
+                <!-- Botón de la reservar -->
+            </div>
+            <!-- Fila responsiva -->
+            </form>
+        </div>
+        <!-- Reservación inmediata a la derecha -->
+        </nav>
+        <!-- Barra de navegación -->
+
+      <!-- Menú -->
+      <div class="menu" role="group">
+        <!-- Botón de Inicio -->
+        <button type="button" onClick="formInicio();" class="menuBtn" title="Inicio" style="font-size:30px; font-weight: lighter;">🏠</button>
+        <!-- Botón de Habitaciones -->
+        <button type="button" onClick="formHabitaciones();" class="menuBtn" title="Habitaciones" style="font-size:30px; font-weight: lighter;">🚪</button>
+        <!-- Botón de Intalaciones -->
+        <button type="button" class="menuNBtn" title="Instalaciones" style="font-size:30px; font-weight: lighter;">🏢</button>
+        <!-- Botón de Turismo -->
+        <button type="button" onClick="formTurismo();" class="menuBtn" title="Turismo" style="font-size:30px; font-weight: lighter;">🚍</button>
+        <!-- Botón de Restaurantes -->
+        <button type="button" onClick="formRestaurantes();" class="menuBtn" title="Restaurantes" style="font-size:30px; font-weight: lighter;">🍴</button>
+        <!-- Botón de FAQ -->
+        <button type="button" onClick="formFAQ();" class="menuBtn" title="FAQ" style="font-size:30px; font-weight: lighter;">❔</button>
+      </div>
+      <!-- Menú -->
+      
+      <!-- Contenido -->
+      <section class="contenido">
+        <!-- Título -->
+        <h1>INSTALACIONES</h1>
+        <!-- Título -->
+
+        <!-- División -->
+        <div class="division"></div>
+        <!-- División -->
+
+        <!-- Envoltura del recorrido -->
+        <div class="card">
+          <!-- Viaje virtual -->
+          <div id="1rAuhv4lD">
+            <script
+              type="text/javascript"
+              async
+              data-short="1rAuhv4lD"
+              width="100%"
+              height="500px"
+              src="https://app.cloudpano.com/public/shareScript.js"
+            ></script>
+          </div>
+          <!-- Viaje virtual -->
+        </div>
+        <!-- Envoltura del recorrido -->
+
+        <!-- Pie de página -->
+        <footer>
+          <!-- Contenedor de la retícula -->
+          <div class="retícula">
+            <!-- Sección: Contacto -->
+            <section class="contacto">
+              <h3>CONTACTO</h3>
+              <!-- Número -->
+              <a class="icon" title="Llámanos" onclick="copyNum()">📞</a>  
+              <!-- Email -->
+              <a class="icon" title="Mándanos un correo" onclick="copyMail()">✉</a>
+              <!-- Ubicación -->
+              <a class="icon" title="Búscanos en Google Maps" href="https://goo.gl/maps/DMi8wx4pS4wtUn2z5">🌎</a>
+            </section>
+            <!-- Sección: Contacto -->
+          </div>
+          <!-- Contenedor de la retícula -->
+      
+          <!-- Copyright -->
+          <div class="copyright" style="background-color: rgba(0, 0, 0, 0.2);">Copyright &copy; 2021</div>
+          <!-- Copyright -->
+        </footer>
+        <!-- Pie de página -->
+      </section>
+      <!-- Contenido -->
+    </div>
+    <!-- Página -->
+  </body>
+</html>
