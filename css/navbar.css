@@ -44,10 +44,3 @@
   padding: 0;
   box-sizing: inherit;
 }
-
-.navbar .inputFlotante {
-  display: block;
-  margin: 0.2em 0 0.2em 30px;
-  box-sizing: inherit;
-  font-family: 'EB Garamond', serif; /* Asignamos la familia EB Garamond al texto de la entrada de texto */
-}
