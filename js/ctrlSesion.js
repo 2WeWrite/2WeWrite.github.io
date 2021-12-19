@@ -22,13 +22,13 @@ async function cambiaBoton(usuarioAuth) {
         if (roles.has("CLIENTE")) {
             // @ts-ignore
             document.getElementById("btnReservar").addEventListener("click", location.href="reservacion_cliente.html");
-            alert("¡Bienvenido " + usuarioAuth + "!");
+            alert("¡Bienvenid@ " + usuarioAuth + "!");
         }
         /* Formulario de reservación para trabajadores. */
         if (roles.has("TRABAJADOR")) {
             // @ts-ignore
             document.getElementById("btnReservar").addEventListener("click", location.href="reservacion_recepcion.html");
-            alert("¡Bienvenido " + usuarioAuth + "!");
+            alert("¡Bienvenid@ " + usuarioAuth + "!");
         }
     } else {
         // No ha iniciado sesión. Pide datos para iniciar sesión.
