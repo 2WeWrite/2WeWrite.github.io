@@ -24,11 +24,13 @@ async function cambiaBoton(usuarioAuth) {
         if (roles.has("CLIENTE")) {
             alert("es cliente");
             reserva.btnReservar.addEventListener("click", location.href="reservacion_cliente.html");
+            alert("cambio de evento al botón" + usuarioAuth);
         }
         /* Formulario de reservación para trabajadores. */
         if (roles.has("TRABAJADOR")) {
             alert("es trabjador");
             reserva.btnReservar.addEventListener("click", location.href="reservacion_recepcion.html");
+            alert("cambio de evento al botón" + usuarioAuth);
         }
     } else {
         // No ha iniciado sesión. Pide datos para iniciar sesión.
