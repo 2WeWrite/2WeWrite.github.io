@@ -17,14 +17,17 @@ function logIn(){
 async function cambiaBoton(usuarioAuth) {
     if (usuarioAuth && usuarioAuth.email) {
         /* Usuario aceptado y con login es revisado en su rol. */
+        alert("si es usuario");
         const roles = await cargaRoles(usuarioAuth.email);
         const reserva = document["reserva"];
         /* Formulario de reservación para clientes. */
         if (roles.has("CLIENTE")) {
+            alert("es cliente");
             reserva.btnReservar.addEventListener("click", location.href="reservacion_cliente.html");
         }
         /* Formulario de reservación para trabajadores. */
         if (roles.has("TRABAJADOR")) {
+            alert("es trabjador");
             reserva.btnReservar.addEventListener("click", location.href="reservacion_recepcion.html");
         }
     } else {
