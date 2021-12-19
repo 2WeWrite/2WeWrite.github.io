@@ -20,17 +20,16 @@ async function cambiaBoton(usuarioAuth) {
         const roles = await cargaRoles(usuarioAuth.email);
         /* Formulario de reservación para clientes. */
         if (roles.has("CLIENTE")) {
-            alert("es cliente");
             // @ts-ignore
             document.getElementById("btnReservar").addEventListener("click", location.href="reservacion_cliente.html");
-            alert("cambio de evento al botón" + usuarioAuth);
+            alert("¡Bienvenido " + usuarioAuth + "!");
         }
         /* Formulario de reservación para trabajadores. */
         if (roles.has("TRABAJADOR")) {
             alert("es trabjador");
             // @ts-ignore
             document.getElementById("btnReservar").addEventListener("click", location.href="reservacion_recepcion.html");
-            alert("cambio de evento al botón" + usuarioAuth);
+            alert("¡Bienvenido " + usuarioAuth + "!");
         }
     } else {
         // No ha iniciado sesión. Pide datos para iniciar sesión.
