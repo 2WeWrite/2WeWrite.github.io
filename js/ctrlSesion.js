@@ -26,7 +26,6 @@ async function cambiaBoton(usuarioAuth) {
         }
         /* Formulario de reservación para trabajadores. */
         if (roles.has("TRABAJADOR")) {
-            alert("es trabjador");
             // @ts-ignore
             document.getElementById("btnReservar").addEventListener("click", location.href="reservacion_recepcion.html");
             alert("¡Bienvenido " + usuarioAuth + "!");
