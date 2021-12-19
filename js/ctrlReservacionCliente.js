@@ -379,7 +379,7 @@ async function ticket() {
   
 
   if(hab == 'Estándar Sencilla'){
-    imgHabitacionSencilla();
+    //imgHabitacionSencilla();
 
     habitacion.innerHTML = "";
     habitacion.innerHTML = hab;
@@ -398,10 +398,7 @@ async function ticket() {
   }
   
   if(hab == 'Estándar Plus'){
-
-    alert("Es habitación plus");
-
-    imgHabitacionPlus();
+    //imgHabitacionPlus();
 
     habitacion.innerHTML = "";
     habitacion.innerHTML = hab;
