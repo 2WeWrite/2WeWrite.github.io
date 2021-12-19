@@ -17,19 +17,20 @@ function logIn(){
 async function cambiaBoton(usuarioAuth) {
     if (usuarioAuth && usuarioAuth.email) {
         /* Usuario aceptado y con login es revisado en su rol. */
-        alert("si es usuario");
         const roles = await cargaRoles(usuarioAuth.email);
-        const reserva = document["reserva"];
+        const btnReservar = document.getElementById("btnReservar");
         /* Formulario de reservación para clientes. */
         if (roles.has("CLIENTE")) {
             alert("es cliente");
-            reserva.btnReservar.addEventListener("click", location.href="reservacion_cliente.html");
+            // @ts-ignore
+            btnReservar.addEventListener("click", location.href="reservacion_cliente.html");
             alert("cambio de evento al botón" + usuarioAuth);
         }
         /* Formulario de reservación para trabajadores. */
         if (roles.has("TRABAJADOR")) {
             alert("es trabjador");
-            reserva.btnReservar.addEventListener("click", location.href="reservacion_recepcion.html");
+            // @ts-ignore
+            btnReservar.addEventListener("click", location.href="reservacion_recepcion.html");
             alert("cambio de evento al botón" + usuarioAuth);
         }
     } else {
